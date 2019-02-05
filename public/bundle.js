@@ -86,6 +86,30 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./app/UIManager.jsx":
+/*!***************************!*\
+  !*** ./app/UIManager.jsx ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data */ \"./app/data.js\");\n\n\nconsole.log(_data__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n\nclass UIManager extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {\n  render() {\n    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"List goes here...\");\n  }\n\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (UIManager);\n\n//# sourceURL=webpack:///./app/UIManager.jsx?");
+
+/***/ }),
+
+/***/ "./app/data.js":
+/*!*********************!*\
+  !*** ./app/data.js ***!
+  \*********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nvar data = {\n  \"music\": [{\n    \"id\": \"0c4IEciLCDdXEhhKxj4ThA\",\n    \"artist\": \"Muse\",\n    \"title\": \"Madness\",\n    \"album\": \"The 2nd Law\"\n  }, {\n    \"id\": \"2QAHN4C4M8D8E8eiQvQW6a\",\n    \"artist\": \"One Republic\",\n    \"title\": \"I Lived\",\n    \"album\": \"Native\"\n  }, {\n    \"id\": \"5VnDkUNyX6u5Sk0yZiP8XB\",\n    \"artist\": \"Imagine Dragons\",\n    \"title\": \"Thunder\",\n    \"album\": \"Evolve\"\n  }]\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (data);\n\n//# sourceURL=webpack:///./app/data.js?");
+
+/***/ }),
+
 /***/ "./app/index.jsx":
 /*!***********************!*\
   !*** ./app/index.jsx ***!
@@ -94,7 +118,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\nclass App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {\n  render() {\n    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, \"React: Hello World!\");\n  }\n\n}\n\n;\nreact_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null), document.getElementById('app'));\n\n//# sourceURL=webpack:///./app/index.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _UIManager__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UIManager */ \"./app/UIManager.jsx\");\n\n\n\n\nclass App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {\n  render() {\n    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UIManager__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null);\n  }\n\n}\n\n;\nreact_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null), document.getElementById('app'));\n\n//# sourceURL=webpack:///./app/index.jsx?");
 
 /***/ }),
 
