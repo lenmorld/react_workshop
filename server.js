@@ -9,7 +9,7 @@ var port = 4000;
 
 server.use(express.static('public'));
 
-server.get("/", function(req, res) {
+server.get("/", function (req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
