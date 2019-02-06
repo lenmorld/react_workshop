@@ -1,6 +1,3 @@
-// import built-in Node package
-const http = require('http');
-
 // import express and init server using express()
 const express = require('express');
 const server = express();
