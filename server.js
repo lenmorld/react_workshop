@@ -1,16 +1,18 @@
-// import built-in Node package
-var http = require('http');
-
 // import express and init server using express()
-var express = require('express');
-var server = express();
+const express = require('express');
+const server = express();
 
-var port = 4000;
+const port = 4000;
 
 server.use(express.static('public'));
 
 server.get("/", function (req, res) {
     res.sendFile(__dirname + '/index.html');
+});
+
+// all backend routes go here under /api
+server.get("/api/json", function (req, res) {
+    res.json({name: "Lenny"});
 });
 
 server.listen(port, function () { // Callback function
