@@ -9,9 +9,10 @@ $ npm install
 $ npm run dev
 ```
 
-server runs on 4001
+> server runs on 4001
 
-webpack-dev-server for React on 4000
+> `webpack-dev-server` for React runs on 4000
+> which enables hot-reloading
 
 
 ## To deploy:
@@ -20,3 +21,6 @@ webpack-dev-server for React on 4000
 $ npm run build
 $ npm start
 ```
+
+> builds `bundle.js` for production
+> node server runs on 4000
