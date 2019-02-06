@@ -29,11 +29,11 @@ module.exports = {
 		]
 	},
 	devServer: {
-		contentBase: './public',
+		contentBase: "./public",
 		port: 4001,
 		// all backend requests (/api) must go to localhost:4000/api
 		proxy: {
-			'/api': 'http://localhost:4000'
+			"/api": "http://localhost:4000"
 		}
-	},
+	}
 };
