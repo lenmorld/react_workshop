@@ -8,14 +8,16 @@ class List extends React.Component {
 			<div>
 				<h3>{this.props.name}</h3>
 				<hr />
-				{
-					list.map(function (item) {
-						return (
-							<Item item={item}
-									key={item.id} />
-						)
-					})
-				}
+				<div className="items_grid">
+					{
+						list.map(function (item) {
+							return (
+								<Item item={item}
+										key={item.id} />
+							)
+						})
+					}
+				</div>
 			</div>
 		);
 	}
