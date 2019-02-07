@@ -3,12 +3,19 @@ import Item from "./Item";
 
 class List extends React.Component {
 	render() {
-		console.log(this.props.list);
+		var list = this.props.list;
 		return (
 			<div>
 				<h3>{this.props.name}</h3>
-				{/* <div>List: {this.props.list}</div>  */}
-				<hr/>
+				<hr />
+				{
+					list.map(function (item) {
+						return (
+							<Item item={item}
+									key={item.id} />
+						)
+					})
+				}
 				<Item />
 			</div>
 		);
