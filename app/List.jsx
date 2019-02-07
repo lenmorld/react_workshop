@@ -16,7 +16,6 @@ class List extends React.Component {
 						)
 					})
 				}
-				<Item />
 			</div>
 		);
 	}
