@@ -7,11 +7,19 @@ import List from './List';
 console.log(data);
 
 class UIManager extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			listName: "The list",
+			list: data.music
+		}
+	}
+
 	render() {
 		return (
 			<div>
 				<Header />
-				<List />
+				<List name={this.state.listName} list={this.state.list}/>
 			</div>
 
 		);
