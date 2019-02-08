@@ -15,11 +15,21 @@ class UIManager extends React.Component {
 		}
 	}
 
+	searchList(event) {
+		var search_term = event.target.value;
+		console.log(search_term);
+	}
+
 	render() {
 		return (
 			<div>
 				<Header />
-				<List name={this.state.listName} list={this.state.list}/>
+				<div className="options">
+					<input type="text"
+						placeholder="Filter..."
+						onChange={this.searchList} />
+				</div>
+				<List name={this.state.listName} list={this.state.list} />
 			</div>
 
 		);
