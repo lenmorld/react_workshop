@@ -50,6 +50,16 @@ class UIManager extends React.Component {
 		});
 	}
 
+	deleteItem(item_id) {
+		console.log("[UIManager]: delete ", item_id );
+  }
+
+  editItem(item_id) {
+		console.log("[UIManager]: edit ", item_id );
+  }
+
+  // end of CRUD methods
+
 	searchList(event) {
 		var searchTerm = event.target.value;
 		// debugger;
@@ -99,7 +109,9 @@ class UIManager extends React.Component {
 						onChange={(event) => this.searchList(event)} />
 					<span className="add" onClick={this.showForm}>[➕]</span>
 				</div>
-				<List name={this.state.listName} list={filteredList} />
+				<List list={filteredList} 
+						deleteItem={(item_id) => this.deleteItem(item_id) }
+						editItem={(item_id) => this.editItem(item_id) } />
 				<ItemForm item={this.state.formFields}
 							onChangeFormInput={(event) => this.onChangeFormInput(event)} 
 							createItem={() => this.createItem() } />
