@@ -51,12 +51,12 @@ class UIManager extends React.Component {
 	}
 
 	deleteItem(item_id) {
-		console.log("[UIManager]: delete ", item_id );
-  }
+		console.log("[UIManager]: delete ", item_id);
+	}
 
-  editItem(item_id) {
-		console.log("[UIManager]: edit ", item_id );
-  }
+	editItem(item_id) {
+		console.log("[UIManager]: edit ", item_id);
+	}
 
   // end of CRUD methods
 
