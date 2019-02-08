@@ -10,11 +10,14 @@ class List extends React.Component {
 				<hr />
 				<div className="items_grid">
 					{
-						list.map(function (item) {
+						list.map((item) => {
 							return (
 								<Item item={item}
-										key={item.id} />
-							)
+										key={item.id} 
+										deleteItem={this.props.deleteItem}
+										editItem={this.props.editItem}
+									/>
+							);
 						})
 					}
 				</div>
