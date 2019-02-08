@@ -52,6 +52,17 @@ class UIManager extends React.Component {
 
 	deleteItem(item_id) {
 		console.log("[UIManager]: delete ", item_id);
+
+		// copy by value, not by reference, using ES6 spread operator
+		var currentListItems = [...this.state.list];
+		// filter list copy, by excluding item to delete
+		var filteredList = currentListItems.filter(function(item) {
+			return item.id !== item_id;
+		});
+		// apply change to state
+		this.setState({
+			list: filteredList
+		});
 	}
 
 	editItem(item_id) {
