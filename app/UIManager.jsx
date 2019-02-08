@@ -71,6 +71,11 @@ class UIManager extends React.Component {
 		});
 	}
 
+	showForm() {
+		var modal = document.querySelector('.modal');
+		modal.style.display = "block";
+	}
+
 	render() {
 		// filter list based on current user input -> searchTerm
 		var list = this.state.list;
@@ -92,6 +97,7 @@ class UIManager extends React.Component {
 					<input type="text"
 						placeholder="Filter..."
 						onChange={(event) => this.searchList(event)} />
+					<span className="add" onClick={this.showForm}>[➕]</span>
 				</div>
 				<List name={this.state.listName} list={filteredList} />
 				<ItemForm item={this.state.formFields}
