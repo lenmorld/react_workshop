@@ -23,6 +23,33 @@ class UIManager extends React.Component {
 		}
 	}
 
+	// data API - CRUD methods
+	createItem() {
+		// debugger;
+		console.log("[UIManager] Create ");
+
+		// get Item data from state
+		var item = this.state.formFields;
+		// copy list values, not reference, using ES6 spread operator
+		var currentListItems = [...this.state.list];
+		// add new item
+		currentListItems.push(item);
+		// apply change to state
+		this.setState({
+			list: currentListItems
+		});
+
+		// empty fields for next round
+		this.setState({
+			formFields: {
+				id: '',
+				title: '',
+				artist: '',
+				album: ''
+			}
+		});
+	}
+
 	searchList(event) {
 		var searchTerm = event.target.value;
 		// debugger;
@@ -68,7 +95,8 @@ class UIManager extends React.Component {
 				</div>
 				<List name={this.state.listName} list={filteredList} />
 				<ItemForm item={this.state.formFields}
-							onChangeFormInput={(event) => this.onChangeFormInput(event)} />
+							onChangeFormInput={(event) => this.onChangeFormInput(event)} 
+							createItem={() => this.createItem() } />
 			</div>
 
 		);
