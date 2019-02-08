@@ -27,6 +27,19 @@ class UIManager extends React.Component {
 	}
 
 	render() {
+		// filter list based on current user input -> searchTerm
+		var list = this.state.list;
+		var searchTerm = this.state.searchTerm;
+		var filteredList;
+
+		if (!searchTerm) {
+			filteredList = list;
+		} else {
+			filteredList = list.filter(function (item) {
+				return item.title.toLowerCase().includes(searchTerm.toLowerCase());
+			});
+		}
+
 		return (
 			<div>
 				<Header />
@@ -35,7 +48,7 @@ class UIManager extends React.Component {
 						placeholder="Filter..."
 						onChange={(event) => this.searchList(event)} />
 				</div>
-				<List name={this.state.listName} list={this.state.list} />
+				<List name={this.state.listName} list={filteredList} />
 			</div>
 
 		);
