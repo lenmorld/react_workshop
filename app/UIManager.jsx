@@ -3,6 +3,7 @@ import data from "./data";
 
 import Header from './Header';
 import List from './List';
+import ItemForm from './ItemForm';
 
 console.log(data);
 
@@ -13,6 +14,12 @@ class UIManager extends React.Component {
 			listName: "The list",
 			list: data.music,
 			searchTerm: '',
+			formFields: {
+				id: '',
+				title: '',
+				artist: '',
+				album: '',
+			},
 		}
 	}
 
@@ -49,6 +56,7 @@ class UIManager extends React.Component {
 						onChange={(event) => this.searchList(event)} />
 				</div>
 				<List name={this.state.listName} list={filteredList} />
+				<ItemForm item={this.state.formFields}/>
 			</div>
 
 		);
