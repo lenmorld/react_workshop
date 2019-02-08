@@ -34,7 +34,14 @@ class UIManager extends React.Component {
 	}
 
 	onChangeFormInput(event) {
-		console.log("input changed");
+		// copy values (not reference) using ES6 spread
+		var currentListFields = { ...this.state.formFields };    
+		// e.g. current_list_fields['artist'] = 'Artist1'
+		currentListFields[event.target.name] = event.target.value;
+		// apply new value to state
+		this.setState({
+			formFields: currentListFields
+		});
 	}
 
 	render() {
