@@ -16,8 +16,8 @@ class UIManager extends React.Component {
 	}
 
 	searchList(event) {
-		var search_term = event.target.value;
-		console.log(search_term);
+		var searchTerm = event.target.value;
+		console.log(searchTerm);
 	}
 
 	render() {
