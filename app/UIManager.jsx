@@ -33,6 +33,10 @@ class UIManager extends React.Component {
 		});
 	}
 
+	onChangeFormInput(event) {
+		console.log("input changed");
+	}
+
 	render() {
 		// filter list based on current user input -> searchTerm
 		var list = this.state.list;
@@ -56,7 +60,8 @@ class UIManager extends React.Component {
 						onChange={(event) => this.searchList(event)} />
 				</div>
 				<List name={this.state.listName} list={filteredList} />
-				<ItemForm item={this.state.formFields}/>
+				<ItemForm item={this.state.formFields}
+							onChangeFormInput={(event) => this.onChangeFormInput(event)} />
 			</div>
 
 		);
