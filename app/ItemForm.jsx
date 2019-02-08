@@ -11,7 +11,13 @@ class ItemForm extends React.Component {
 	onSubmitForm(event) {
 		event.preventDefault(); // prevent reload of page
 		// console.log("form submitted");
-		this.props.createItem();
+
+		// forward request to UIManager, depending on current mode
+		if (this.props.mode === "CREATE") {
+			this.props.createItem();
+		} else if (this.props.mode === "EDIT") {
+			this.props.saveUpdatedItem();
+		}
 	}
 
 	render() {

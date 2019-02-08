@@ -86,6 +86,46 @@ class UIManager extends React.Component {
 			this.showForm();
 	}
 
+	saveUpdatedItem() {
+		// debugger;
+
+		// get Item data from state
+		var item = this.state.formFields;
+
+		// copy by value, not by reference, using ES6 spread operator
+		var currentListItems = [...this.state.list];
+		// init new list that will hold new items
+		var updatedListItems = [];
+		/*
+			loop through all items
+			if old_item matches id of the updated one, replace it
+			else keep old_item
+	  */
+		currentListItems.forEach(function (old_item) {
+			if (old_item.id === item.id) {
+				updatedListItems.push(item);
+			} else {
+				updatedListItems.push(old_item);
+			}
+		});
+
+		// apply changes to state list
+		// reset form to CREATE
+		this.setState({
+			list: updatedListItems,
+			form_mode: 'CREATE',
+			formFields: {
+				id: '',
+				title: '',
+				artist: '',
+				album: ''
+			}
+		});
+
+		// hideForm
+		this.hideForm();
+	}
+
   // end of CRUD methods
 
 	searchList(event) {
@@ -112,6 +152,11 @@ class UIManager extends React.Component {
 	showForm() {
 		var modal = document.querySelector('.modal');
 		modal.style.display = "block";
+	}
+
+	hideForm() {
+		var modal = document.querySelector('.modal');
+		modal.style.display = "none";
 	}
 
 	render() {
@@ -143,6 +188,7 @@ class UIManager extends React.Component {
 				<ItemForm item={this.state.formFields}
 							onChangeFormInput={(event) => this.onChangeFormInput(event)} 
 							createItem={() => this.createItem() }
+							saveUpdatedItem={item => this.saveUpdatedItem(item)}
 							mode={this.state.formMode} />
 			</div>
 
