@@ -159,6 +159,19 @@ class UIManager extends React.Component {
 		modal.style.display = "none";
 	}
 
+	onAddItem() {
+		this.setState({
+			formMode: 'CREATE',
+			formFields: {
+				id: '',
+				title: '',
+				artist: '',
+				album: ''
+			}
+		});
+		this.showForm();
+	}
+
 	render() {
 		// filter list based on current user input -> searchTerm
 		var list = this.state.list;
@@ -180,7 +193,7 @@ class UIManager extends React.Component {
 					<input type="text"
 						placeholder="Filter..."
 						onChange={(event) => this.searchList(event)} />
-					<span className="add" onClick={this.showForm}>[➕]</span>
+					<span className="add" onClick={() => this.onAddItem()}>[➕]</span>
 				</div>
 				<List list={filteredList} 
 						deleteItem={(item_id) => this.deleteItem(item_id) }
