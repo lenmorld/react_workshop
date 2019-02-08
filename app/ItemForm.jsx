@@ -1,6 +1,16 @@
 import React from 'react';
 
 class ItemForm extends React.Component {
+
+	hideForm() {
+		console.log("hide form");
+	}
+
+	onSubmitForm(event) {
+		event.preventDefault(); // prevent reload of page
+		console.log("form submitted");
+	}
+
 	render() {
 
 		var item = this.props.item;
@@ -13,7 +23,7 @@ class ItemForm extends React.Component {
 			<div>
 				<form>
 					<div className="close_form">
-						<span>[🗙]</span>
+						<span onClick={this.hideForm}>[🗙]</span>
 					</div>
 					<h3>Create a new item</h3>
 					<p>
@@ -42,7 +52,9 @@ class ItemForm extends React.Component {
 					</p>
 
 					<div className="create">
-						<button>CREATE</button>
+						<button onClick={(event) => this.onSubmitForm(event) }>
+							CREATE
+						</button>
 					</div>
 				</form>
 			</div>
