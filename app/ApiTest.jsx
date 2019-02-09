@@ -6,10 +6,21 @@ const SEARCH_QUERY = "dank+memes";
 const RESULTS_LIMIT = 5;
 
 class ApiTest extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			memes: [],
+		};
+	}
+
 	componentDidMount() {
 		axios.get(`http://api.giphy.com/v1/gifs/search?q=${SEARCH_QUERY}&api_key=${GIPHY_API_KEY}&limit=${RESULTS_LIMIT}`)
 			.then((res) => {
 				console.log(res);
+				const memes = res.data.data;
+				this.setState({
+					memes: memes,
+				})
 			});
 	}
 
