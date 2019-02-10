@@ -197,6 +197,14 @@ class UIManager extends React.Component {
 		}
 	}
 
+	isInStateList(item_id) {
+		// console.log(item_id);
+		var isInList = this.state.list.some(function (old_item) {
+			return old_item.id === item_id;
+		});
+		return isInList;
+	}
+
 	render() {
 		// filter list based on current user input -> searchTerm
 		var list = this.state.list;
@@ -230,7 +238,8 @@ class UIManager extends React.Component {
 							saveUpdatedItem={item => this.saveUpdatedItem(item)}
 							mode={this.state.formMode} />
 				<Spotify hideSpotify={this.hideSpotify} 
-							toggleItemFromSpotify={(item) => this.toggleItemFromSpotify(item)}/>
+							toggleItemFromSpotify={(item) => this.toggleItemFromSpotify(item)}
+							isInStateList={(item_id) => this.isInStateList(item_id)} />
 			</div>
 
 		);

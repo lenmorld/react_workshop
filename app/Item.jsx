@@ -11,7 +11,9 @@ class Item extends React.Component {
 					this.props.displayType === "spotify_api" ?
 						(
 							<div className="add_remove">
-								<span onClick={() => this.props.toggleItem(item)}>➕</span>
+								<span onClick={() => this.props.toggleItem(item)}>
+									{ this.props.isInStateList(item.id) ? '❎' : '➕' }
+								</span>
 							</div>
 						) :
 						(
