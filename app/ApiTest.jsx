@@ -13,6 +13,13 @@ class ApiTest extends React.Component {
 			});
 	}
 
+	constructor() {
+		super();
+		this.state = {
+			memes: [],
+		};
+	}
+
 	render() {
 		return (
 			<div>
