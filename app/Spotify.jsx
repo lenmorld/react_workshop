@@ -1,6 +1,34 @@
 import React from 'react';
+import axios from 'axios';
 
 class Spotify extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			searchTerm: ''
+		}
+	}
+
+	trackSearchTerm(event) {
+		var searchTerm = event.target.value;
+		// console.log(`[Spotify.jsx] ${search_term}`);
+
+		this.setState({
+			searchTerm: searchTerm
+		});
+	}
+
+	searchSpotify() {
+		axios.get(`/api/songs?search=${this.state.searchTerm}`)
+			.then((res) => {
+				// debugger;
+				console.log(res.data);
+			})
+			.catch((err) => {
+				console.log(`[Spotify.jsx] search error: ${err}`);
+			});
+	}
 
 	render() {
 		return (
