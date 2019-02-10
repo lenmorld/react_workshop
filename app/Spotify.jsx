@@ -62,7 +62,7 @@ class Spotify extends React.Component {
 						<input type="text" onChange={(event) => this.trackSearchTerm(event)} />
 						<button onClick={() => this.searchSpotify()}>Search</button>
 					</div>
-					<List list={this.state.search_results}
+					<List list={this.state.searchResults}
                           displayType={"spotify_api"}
                           toggleItem={this.props.toggleItemFromSpotify} />
 				</div>
