@@ -6,8 +6,8 @@ import ApiTest from "./ApiTest";
 
 class App extends React.Component {
 	render() {
-		// return <UIManager />;
-		return <ApiTest />;
+		return <UIManager />;
+		// return <ApiTest />;
 	}
 }
 
