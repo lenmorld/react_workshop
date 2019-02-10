@@ -25,6 +25,9 @@ class ApiTest extends React.Component {
 	}
 
 	render() {
+		if (this.state.memes.length === 0) {
+			return <div>Loading...</div>;
+		}
 		return (
 			<div>
 				{this.state.memes.map((item) =>
