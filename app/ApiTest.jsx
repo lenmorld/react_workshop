@@ -24,17 +24,14 @@ class ApiTest extends React.Component {
 			});
 	}
 
-	constructor() {
-		super();
-		this.state = {
-			memes: [],
-		};
-	}
-
 	render() {
 		return (
 			<div>
-				Try out some API!
+				{this.state.memes.map((item) =>
+					<div key={item.id}>
+						<iframe src={item.embed_url} width="100%" height="100%" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
+					</div>
+				)}
 			</div>
 		);
 	}
