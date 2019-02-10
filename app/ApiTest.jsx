@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 
 const GIPHY_API_KEY = "MPHyugKqout4DfiKhja9Oy33uLghaigg";
-const SEARCH_QUERY = "dank+memes";
+const SEARCH_QUERY = "classic+memes";
 const RESULTS_LIMIT = 5;
 
 class ApiTest extends React.Component {
