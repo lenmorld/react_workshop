@@ -4,8 +4,9 @@ import data from "./data";
 import Header from './Header';
 import List from './List';
 import ItemForm from './ItemForm';
+import Spotify from './Spotify';
 
-console.log(data);
+// console.log(data);
 
 class UIManager extends React.Component {
 	constructor() {
@@ -25,12 +26,12 @@ class UIManager extends React.Component {
 	}
 
 	// data API - CRUD methods
-	createItem() {
+	createItem(item) {
 		// debugger;
 		console.log("[UIManager] Create ");
 
 		// get Item data from state
-		var item = this.state.formFields;
+		var item = item || this.state.formFields;
 		// copy list values, not reference, using ES6 spread operator
 		var currentListItems = [...this.state.list];
 		// add new item
@@ -172,6 +173,38 @@ class UIManager extends React.Component {
 		this.showForm();
 	}
 
+	showSpotify() {
+		var modal = document.querySelector('.spotify_modal');
+		modal.style.display = "block";
+	}
+
+	hideSpotify() {
+		var modal = document.querySelector('.spotify_modal');
+		modal.style.display = "none";
+	}
+
+	toggleItemFromSpotify(item) {
+		console.log(item);
+
+		const isInList = this.state.list.some(function (old_item) {
+			return old_item.id === item.id;
+		});
+
+		if (isInList) {
+			this.deleteItem(item.id);
+		} else {
+			this.createItem(item);
+		}
+	}
+
+	isInStateList(item_id) {
+		// console.log(item_id);
+		var isInList = this.state.list.some(function (old_item) {
+			return old_item.id === item_id;
+		});
+		return isInList;
+	}
+
 	render() {
 		// filter list based on current user input -> searchTerm
 		var list = this.state.list;
@@ -194,6 +227,7 @@ class UIManager extends React.Component {
 						placeholder="Filter..."
 						onChange={(event) => this.searchList(event)} />
 					<span className="add" onClick={() => this.onAddItem()}>[➕]</span>
+					<span className="add_spotify" onClick={this.showSpotify}>[➕ from Spotify]</span>
 				</div>
 				<List list={filteredList} 
 						deleteItem={(item_id) => this.deleteItem(item_id) }
@@ -203,6 +237,9 @@ class UIManager extends React.Component {
 							createItem={() => this.createItem() }
 							saveUpdatedItem={item => this.saveUpdatedItem(item)}
 							mode={this.state.formMode} />
+				<Spotify hideSpotify={this.hideSpotify} 
+							toggleItemFromSpotify={(item) => this.toggleItemFromSpotify(item)}
+							isInStateList={(item_id) => this.isInStateList(item_id)} />
 			</div>
 
 		);
