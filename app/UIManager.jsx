@@ -183,6 +183,10 @@ class UIManager extends React.Component {
 		modal.style.display = "none";
 	}
 
+	toggleItemFromSpotify(item) {
+		console.log(item);
+	}
+
 	render() {
 		// filter list based on current user input -> searchTerm
 		var list = this.state.list;
@@ -215,7 +219,8 @@ class UIManager extends React.Component {
 							createItem={() => this.createItem() }
 							saveUpdatedItem={item => this.saveUpdatedItem(item)}
 							mode={this.state.formMode} />
-				<Spotify hideSpotify={this.hideSpotify}/>
+				<Spotify hideSpotify={this.hideSpotify} 
+							toggleItemFromSpotify={(item) => this.toggleItemFromSpotify(item)}/>
 			</div>
 
 		);

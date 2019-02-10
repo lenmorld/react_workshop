@@ -16,6 +16,8 @@ class List extends React.Component {
 										key={item.id} 
 										deleteItem={this.props.deleteItem}
 										editItem={this.props.editItem}
+										displayType={this.props.displayType}
+										toggleItem={this.props.toggleItem}
 									/>
 							);
 						})
