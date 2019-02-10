@@ -26,12 +26,12 @@ class UIManager extends React.Component {
 	}
 
 	// data API - CRUD methods
-	createItem() {
+	createItem(item) {
 		// debugger;
 		console.log("[UIManager] Create ");
 
 		// get Item data from state
-		var item = this.state.formFields;
+		var item = item || this.state.formFields;
 		// copy list values, not reference, using ES6 spread operator
 		var currentListItems = [...this.state.list];
 		// add new item
@@ -185,6 +185,16 @@ class UIManager extends React.Component {
 
 	toggleItemFromSpotify(item) {
 		console.log(item);
+
+		const isInList = this.state.list.some(function (old_item) {
+			return old_item.id === item.id;
+		});
+
+		if (isInList) {
+			this.deleteItem(item.id);
+		} else {
+			this.createItem(item);
+		}
 	}
 
 	render() {
