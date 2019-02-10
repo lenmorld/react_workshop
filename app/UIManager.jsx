@@ -4,8 +4,9 @@ import data from "./data";
 import Header from './Header';
 import List from './List';
 import ItemForm from './ItemForm';
+import Spotify from './Spotify';
 
-console.log(data);
+// console.log(data);
 
 class UIManager extends React.Component {
 	constructor() {
@@ -172,6 +173,16 @@ class UIManager extends React.Component {
 		this.showForm();
 	}
 
+	showSpotify() {
+		var modal = document.querySelector('.spotify_modal');
+		modal.style.display = "block";
+	}
+
+	hideSpotify() {
+		var modal = document.querySelector('.spotify_modal');
+		modal.style.display = "none";
+	}
+
 	render() {
 		// filter list based on current user input -> searchTerm
 		var list = this.state.list;
@@ -194,6 +205,7 @@ class UIManager extends React.Component {
 						placeholder="Filter..."
 						onChange={(event) => this.searchList(event)} />
 					<span className="add" onClick={() => this.onAddItem()}>[➕]</span>
+					<span className="add_spotify" onClick={this.showSpotify}>[➕ from Spotify]</span>
 				</div>
 				<List list={filteredList} 
 						deleteItem={(item_id) => this.deleteItem(item_id) }
@@ -203,6 +215,7 @@ class UIManager extends React.Component {
 							createItem={() => this.createItem() }
 							saveUpdatedItem={item => this.saveUpdatedItem(item)}
 							mode={this.state.formMode} />
+				<Spotify hideSpotify={this.hideSpotify}/>
 			</div>
 
 		);
