@@ -384,3 +384,28 @@ form .create button:hover {
 	scrolling text when overflow: https://codepen.io/AndrewHyte/pen/DcExu
 
 */
+
+nav {
+	float: right;
+}
+
+nav ul {
+	list-style-type: none;
+}
+
+nav li {
+	display: inline-block;
+}
+
+nav li a {
+	/* display: block; */
+	color: white;
+	padding: 8px 16px;
+	text-decoration: none;
+ }
+ 
+ /* Change the link color on hover */
+nav li a:hover {
+	/* background-color: #555; */
+	color: limegreen;
+ }
