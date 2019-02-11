@@ -1,6 +1,6 @@
 import React from "react";
 
-class ApiTest extends React.Component {
+class Giphy extends React.Component {
 
 	constructor() {
 		super();
@@ -12,10 +12,10 @@ class ApiTest extends React.Component {
 	render() {
 		return (
 			<div>
-				Try out some API!
+				Try the Giphy API!
 			</div>
 		);
 	}
 }
 
-export default ApiTest;
+export default Giphy;
