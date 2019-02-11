@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import UIManager from "./UIManager";
-import ApiTest from "./ApiTest";
+import Giphy from "./Giphy";
 
 class App extends React.Component {
 	render() {
-		return <UIManager />;
-		// return <ApiTest />;
+		// return <UIManager />;
+		return <Giphy />;
 	}
 }
 
