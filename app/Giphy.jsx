@@ -5,7 +5,7 @@ const GIPHY_API_KEY = "MPHyugKqout4DfiKhja9Oy33uLghaigg";
 const SEARCH_QUERY = "classic+memes";
 const RESULTS_LIMIT = 5;
 
-class ApiTest extends React.Component {
+class Giphy extends React.Component {
 	constructor() {
 		super();
 		this.state = {
@@ -37,4 +37,4 @@ class ApiTest extends React.Component {
 	}
 }
 
-export default ApiTest;
+export default Giphy;
