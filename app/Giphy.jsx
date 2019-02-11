@@ -58,10 +58,10 @@ class Giphy extends React.Component {
 			return <div>Loading...</div>;
 		}
 		return (
-			<div>
+			<div style={{marginTop: '20px'}}>
 				<form>
 					<p>Search: <input type="text" ref={this.searchQueryInput} style={{ border: '1px solid green' }} /></p>
-					<p>Num. results: <input type="number" ref={this.resultsLimitInput} style={{ border: '1px solid green' }}/></p>
+					<p>Count: <input type="number" ref={this.resultsLimitInput} style={{ border: '1px solid green' }}/></p>
 					<div className="spotify_input">
 						<button onClick={(event) => {this.submitSearch(event)}}>SEARCH!</button>
 					</div>
