@@ -15,14 +15,14 @@ class App extends React.Component {
 					<ul>
 						<li><Link to="/">Songs</Link></li>
 						<li><Link to="/memes">Memes</Link></li>
-						<li><Link to="/greeting">Greeting</Link></li>
+						<li><Link to="/greeting/en">Greeting</Link></li>
 					</ul>
 				</nav>
 
 				{/* match route to React component */}
 				<Route exact path="/" component={UIManager} />
 				<Route exact path="/memes" component={Giphy} />
-				<Route exact path="/greeting" render={(props) => <Greeting text="Hello, " {...props} /> } />
+				<Route exact path="/greeting/:lang" render={(props) => <Greeting text="Hello, " {...props} /> } />
 			</div>
 		</HashRouter>
 
