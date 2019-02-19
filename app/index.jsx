@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { HashRouter, Route, Link } from 'react-router-dom';
 
 import UIManager from "./UIManager";
 import Giphy from "./Giphy";
 
 class App extends React.Component {
 	render() {
-		return <BrowserRouter>
+		return <HashRouter>
 			<div>
 				{/* nav links to take us to the route */}
 				<nav>
@@ -21,7 +21,7 @@ class App extends React.Component {
 				<Route exact path="/" component={UIManager} />
 				<Route exact path="/memes" component={Giphy} />
 			</div>
-		</BrowserRouter>
+		</HashRouter>
 
 	}
 }
