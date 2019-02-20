@@ -4,6 +4,12 @@
  
 #### PDF Version: https://github.com/lenmorld/react_workshop/raw/master/React%20workshop.pdf
 
+
+### Preview:
+
+![Music Hub preview](https://raw.githubusercontent.com/lenmorld/rnw/master/screens/preview.gif)
+
+
 ## To dev: 
 
 ```
