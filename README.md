@@ -1,10 +1,10 @@
 # React workshop
 
 ### SLIDES: https://docs.google.com/presentation/d/1FzKNpnLRTTAYIBDcSstb15DnbKVQphybIEaJjt2L10w
+ 
+#### PDF Version: https://github.com/lenmorld/react_workshop/raw/master/React%20workshop.pdf
 
-#### PDF Version: 
-
-## To dev: https://github.com/lenmorld/react_workshop/raw/master/React%20workshop.pdf
+## To dev: 
 
 ```
 $ npm checkout dev 	# to follow workshop
