@@ -1,5 +1,8 @@
 # React workshop
 
+### SLIDES: https://docs.google.com/presentation/d/1FzKNpnLRTTAYIBDcSstb15DnbKVQphybIEaJjt2L10w
+
+#### PDF Version: 
 
 ## To dev:
 
