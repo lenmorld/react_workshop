@@ -4,7 +4,7 @@
 
 #### PDF Version: 
 
-## To dev:
+## To dev: https://github.com/lenmorld/react_workshop/raw/master/React%20workshop.pdf
 
 ```
 $ npm checkout dev 	# to follow workshop
