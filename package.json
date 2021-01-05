@@ -21,7 +21,7 @@
 	},
 	"homepage": "https://github.com/lenmorld/react_workshop#readme",
 	"dependencies": {
-		"axios": "^0.18.0",
+		"axios": "^0.21.1",
 		"express": "^4.16.3",
 		"qs": "^6.6.0",
 		"react": "^16.5.2",
